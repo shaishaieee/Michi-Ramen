@@ -1,0 +1,40 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+@use "../component/" as *;
+@use "../vendor/" as *;
+
+.header{
+    padding: 2rem 0;
+    &__wrapper{
+        @include flex(space-between, center);
+        @include mediaQuery{
+            @include grid(1);
+            position: relative;
+            left: 4;
+        }
+        ul{
+            @include flex(space-between, center);
+            gap: 3rem;
+            font-size: 1.5rem;
+            @include mediaQuery{
+                visibility: hidden;
+            }
+            li{
+                a{
+                    color: $clr-light;
+                }
+            }
+            
+        }
+    }
+    &__button{
+        a{
+            padding: 1rem 2rem;
+            border-radius: 0.2rem;
+            font-size: 1rem;
+            background: $clr-lightorange;
+            color: $clr-light;
+        }
+      
+    }
+}

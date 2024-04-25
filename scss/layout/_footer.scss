@@ -1,0 +1,70 @@
+@use '../abstract/' as *;
+
+.footer{
+    background-color: $clr-primary;
+    padding:  6rem 0;
+    &__wrapper{
+        @include unevenGrid(1fr 3fr 1fr, 1rem);
+        @include mediaQuery{
+            @include unevenGrid(1fr);
+        }
+    }
+    &__icons{
+        ul{
+            @include flex(center);
+            gap: 2rem;
+            @include mediaQuery{
+                @include flex(flex-start);
+            }
+    
+            li{
+                a{
+                    i{
+                    color: $clr-lightorange;
+                    font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+    &__contact{
+        @include mediaQuery{
+             padding-top: 2rem;
+        }
+        ul{
+            @include flex(center, center);
+            gap:0.5rem;
+            @include mediaQuery{
+                @include flex(flex-start);
+            }
+
+            li{
+                color: $clr-light;
+                font-size: 1.8rem;
+                line-height: 1.7;
+                @include mediaQuery{
+                    font-size: 1.2rem;
+                }
+                i{
+                    font-size: 0.3rem;
+                }
+            }
+        }
+    }
+    &__button{
+        justify-self: flex-end;
+        align-self: center;
+        @include mediaQuery{
+            justify-self: flex-start;
+            padding-top: 2rem;
+        }
+        button{
+            color: $clr-light;
+            background: $clr-lightorange;
+            border-radius: 0.2rem;
+            padding: 1rem 2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+    }
+}
